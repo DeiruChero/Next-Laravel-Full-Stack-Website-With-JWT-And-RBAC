@@ -1,0 +1,199 @@
+/* Animations */
+@keyframes slideInSidebar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInContent {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sidebar {
+  width: 220px;
+  background: #333;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+  animation: slideInSidebar 0.8s ease-out;
+  transition: transform 0.3s ease;
+  z-index: 998;
+  transform: translateX(0);
+}
+
+.sidebarCollapsed {
+  transform: translateX(-100%);
+  width: 220px;
+  padding: 20px;
+}
+
+.menuTitle {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  margin-left: 100px;
+  color: lightseagreen;
+}
+
+.loadingText {
+  color: #aaa;
+  font-style: italic;
+}
+
+.group {
+  margin-bottom: 10px;
+}
+
+.groupTitle {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 8px 12px;
+  background-color: #444;
+  color: #fff;
+  border-radius: 6px;
+  margin-bottom: 5px;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.groupTitle:hover {
+  transform: scale(1.05);
+  background-color: #555;
+  box-shadow: 0 0 12px rgba(255, 128, 0, 0.7);
+}
+
+.groupTitleActive {
+  background-color: #333;
+  color: #ff8000;
+  box-shadow: 0 0 8px #ff8000;
+}
+
+.childLinkList {
+  list-style: none;
+  padding-left: 10px;
+  margin-top: 5px;
+}
+
+.childLink {
+  display: block;
+  padding: 6px 10px;
+  color: #fff;
+  background-color: transparent;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.childLink:hover {
+  background-color: #555;
+  color: #00b5ff;
+  box-shadow: 0 0 8px #00b5ff;
+}
+
+.childLinkActive {
+  color: #00b5ff;
+  background-color: #333;
+  font-weight: bold;
+  box-shadow: 0 0 10px #00b5ff;
+  border-left: 4px solid #00b5ff;
+  padding-left: 12px;
+}
+
+.pageWrapper {
+  display: flex;
+}
+
+.mainContent {
+  margin-left: 220px;
+  padding: 40px;
+  height: 100vh;
+  overflow-y: auto;
+  background: #f2f2f2;
+  flex: 1;
+  font-family: Arial, sans-serif;
+  animation: fadeInContent 1s ease forwards;
+  transition: margin-left 0.3s ease;
+}
+
+.mainContentCollapsed {
+  margin-left: 0;
+}
+
+.welcomeBox {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.welcomeBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.loginLink {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 114, 255, 0.4);
+}
+
+.loginLink:hover {
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  transform: scale(1.05);
+}
+
+.roleTag {
+  font-size: 0.8rem;
+  color: #888;
+  margin-left: 10px;
+}
+
+.hamburger {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  background: #0072ff;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 114, 255, 0.4);
+  transition: background 0.3s ease, left 0.3s ease;
+}
+
+.hamburger.hamburgerOpen {
+  left: 240px;
+}
+
+.hamburger:hover {
+  background: #005fcc;
+}
